@@ -6,7 +6,7 @@ require('dotenv').config();
 const connection = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: mysql_password,
+    password: process.env.mysql_password,
     database: "moveo"
 });
 
