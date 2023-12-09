@@ -7,6 +7,8 @@ const connection = mysql.createConnection({
     user: "root",
     password: process.env.DB_PASSWORD,
     database: "moveo",
+    port: '3306',
+    protocol: 'tcp'
 });
 
 connection.connect((err) => {
