@@ -1,13 +1,12 @@
 const mysql = require('mysql2');
 const codeBlocks = require('./extensions/code_blocks');
-// const mysql_password = require('./.env');
 require('dotenv').config();
 
 const connection = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: process.env.mysql_password,
-    database: "moveo"
+    password: process.env.DB_PASSWORD,
+    database: "moveo",
 });
 
 connection.connect((err) => {
