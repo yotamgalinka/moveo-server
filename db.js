@@ -1,6 +1,7 @@
 const mysql = require('mysql2');
 const codeBlocks = require('./extensions/code_blocks');
-const mysql_password = require('./.env');
+// const mysql_password = require('./.env');
+require('dotenv').config();
 
 const connection = mysql.createConnection({
     host: "localhost",
