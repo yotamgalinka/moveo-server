@@ -1,5 +1,5 @@
 const express = require('express');
-const codeBlocks = require('../extensions/codeBlocks');
+const codeBlocks = require('../extensions/code_blocks.js');
 const db = require('../db.js');
 
 const router = express.Router()

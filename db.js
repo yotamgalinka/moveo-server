@@ -1,10 +1,11 @@
 const mysql = require('mysql2');
-const codeBlocks = require('./extensions/codeBlocks');
+const codeBlocks = require('./extensions/code_blocks');
+const mysql_password = require('./.env');
 
 const connection = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "Ambacyda1!",
+    password: mysql_password,
     database: "moveo"
 });
 
