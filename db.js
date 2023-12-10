@@ -8,7 +8,6 @@ const connection = mysql.createConnection({
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DBNAME,
     port: '3306',
-    protocol: 'tcp'
 });
 
 connection.connect((err) => {
@@ -34,10 +33,11 @@ connection.connect((err) => {
       }
       console.log('Table created or already exists');
   
-      // Iterate over the codeBLocksData array and insert data into MySQL
+      // Iterate over the codeBlocks array and insert data into MySQL
       codeBlocks.forEach((block) => {
         const { id, title, goal, code, answer } = block
-        const insertQuery = 'INSERT IGNORE INTO moveo (id, title, goal, code, answer) VALUES (?, ?, ?, ?, ?)'
+        const insertQuery = `INSERT INTO moveo (id, title, goal, code, answer) VALUES (?, ?, ?, ?, ?)
+        ON DUPLICATE KEY UPDATE code = VALUES(code)`;
         connection.query( insertQuery, [id, title, goal, code, answer], (err, results) => {
             if (err) {
                 console.error('Error inserting data:', err);
