@@ -12,7 +12,7 @@ app.use("", routes);
 const PORT = process.env.PORT || 5000;
 
 const server = http.createServer(app);
-const wss = new WebSocket.Server({ port: PORT });
+const wss = new WebSocket.Server({ server });
 
 //////////////////// Establishing socket connection ////////////////////
 
