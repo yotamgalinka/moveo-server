@@ -3,12 +3,12 @@ const codeBlocks = require('./extensions/code_blocks');
 require('dotenv').config();
 
 const connection = mysql.createConnection({
-    host: process.env.HOST,
-    user: process.env.USER,
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    database: process.env.DBNAME,
-    // port: '3306',
-    // protocol: 'tcp'
+    database: process.env.DB_DBNAME,
+    port: '3306',
+    protocol: 'tcp'
 });
 
 connection.connect((err) => {
