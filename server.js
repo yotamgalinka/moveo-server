@@ -9,8 +9,10 @@ const app = express();
 app.use(cors());
 app.use("", routes);
 
+const PORT = process.env.PORT || 5000;
+
 const server = http.createServer(app);
-const wss = new WebSocket.Server({ server });
+const wss = new WebSocket.Server({ port: PORT });
 
 //////////////////// Establishing socket connection ////////////////////
 
@@ -55,8 +57,6 @@ function handleCodeChangeEvent(data) {
 }
 
 //////////////////// Server initialization ////////////////////
-
-const PORT = process.env.PORT || 5000;
 
 server.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
