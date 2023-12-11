@@ -8,7 +8,7 @@ const codeBLocksData = [
 	let promise = new Promise((resolve, reject) => {
 		setTimeout(() => resolve("done!"), 1000);
   	});
-  	let result = 0;// fix this line and catch the promise result here
+  	let result = 0; // fix this line and catch the promise result here
   	// Print the result
 }`,
 		answer: `async function f() {
@@ -18,7 +18,7 @@ const codeBLocksData = [
 			});
 		  
 			let result = await promise; 
-			console.log(result); // "done!"
+			console.log(result);
 		  }
 		  `
 	},	  
@@ -75,7 +75,7 @@ const originalString = "hello";
 	  }
 	  
 	  const originalString = "hello";
-	  console.log(reverseString(originalString)); // Output: "olleh"`
+	  console.log(reverseString(originalString));`
 	},
 	{
 		id: 4,
