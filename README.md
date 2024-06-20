@@ -1,1 +1,1 @@
-https://moveo-server-production-7b47.up.railway.app
+moveo-server-yotam.up.railway.app
