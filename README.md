@@ -1,1 +1,1 @@
-moveo-server-yotam.up.railway.app
+moveo-server-yotamgalinka.up.railway.app
