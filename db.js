@@ -4,6 +4,7 @@ console.log('DB_HOST:', process.env.DB_HOST);
 console.log('DB_USER:', process.env.DB_USER);
 console.log('DB_PASSWORD:', process.env.DB_PASSWORD);
 console.log('DB_DBNAME:', process.env.DB_DBNAME);
+console.log('DB_PORT:', process.env.DB_PORT);
 
 const mysql = require('mysql2');
 const codeBlocks = require('./extensions/code_blocks');
@@ -13,7 +14,7 @@ const connection = mysql.createConnection({
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DBNAME,
-    port: '3306',
+    port: process.env.DB_PORT || 3306,
 });
 
 connection.connect((err) => {
